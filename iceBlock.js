@@ -1,10 +1,6 @@
 const SHA256 = require("crypto-js/sha256");
 
-const print = (content)=>{
-    console.log(content);
-}
-
-class Block{
+export default class Block{
     constructor(timestamp,data,previousHash=null){
         this.timestamp = timestamp;
         if(typeof(data)==='object'){
@@ -22,23 +18,3 @@ class Block{
 
 
 }
-
-const block1 = new Block(
-    new Date(),
-    {
-        "name":"sabbir ahmmed",
-        "balance":12.00
-    }
-)
-
-const block2 = new Block(
-    new Date(),
-    {
-        "name":"rummon",
-        "balance":13.56
-    },
-    block1.hash
-)
-
-print(block1)
-print(block2)
